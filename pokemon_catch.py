@@ -46,7 +46,7 @@ def main():
     for pokemon_id, name, types in names_and_types:
         print(f"ID {pokemon_id} : {name}, 屬性: {', '.join(types)}")
 
-    names_and_weights = list_pokemon_names_and_weights(0, 100, 50)
+    names_and_weights = list_pokemon_names_and_weights(1, 100, 50)
     print("【目標三】")
     for name, weight in names_and_weights:
         print(f'{name}, 體重: {weight}')
