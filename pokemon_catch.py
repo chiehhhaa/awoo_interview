@@ -39,9 +39,9 @@ def list_pokemon_names_and_weights(lower_id, upper_id, weight_limit):
             weight = pokemon_data['weight']
             if weight < weight_limit:
                 name = pokemon_data['name']
-                names_and_weights.append((name, weight))
+                names_and_weights.append((pokemon_id, name, weight))
 
-    return sorted(names_and_weights, key=lambda x: x[1], reverse=True)
+    return sorted(names_and_weights, key=lambda x: x[2], reverse=True)
 
 
 def main():
@@ -56,8 +56,8 @@ def main():
 
     names_and_weights = list_pokemon_names_and_weights(0, 100, 50)
     print("【目標三】")
-    for name, weight in names_and_weights:
-        print(f'{name}, 體重: {weight}')
+    for pokemon_id, name, weight in names_and_weights:
+        print(f'ID {pokemon_id} : {name}, 體重: {weight}')
 
 
 if __name__ == "__main__":
